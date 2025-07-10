@@ -2,7 +2,10 @@ import random
 
 def main():
     if mostrar_menu():
-            print(embaralhar_cartas(montar_cartas(criar_pares())))
+            pares = criar_pares()
+            cartas = montar_cartas(pares)
+            embaralhar_cartas(cartas)
+            print(cartas)
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -33,9 +36,8 @@ def montar_cartas(pares):
         lista_palavras.append(par['palavra_ingles'])
     return lista_palavras
 
-def embaralhar_cartas(lista_palavras):
-    random.shuffle(lista_palavras)
-    return lista_palavras
+def embaralhar_cartas(cartas):
+    random.shuffle(cartas)
 
 def mostrar_tabulheiro(palavras):
     ...
