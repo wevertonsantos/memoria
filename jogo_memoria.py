@@ -12,9 +12,9 @@ def main():
         pos1,pos2 = escolher_cartas(cartas)
         reveladas.append(pos1)
         reveladas.append(pos2)
-        
+
         mostrar_tabulheiro(cartas_embaralhadas,reveladas)
-        verificar_par(cartas,reveladas)
+        verificar_par(pos1,pos2,pares,cartas_embaralhadas)
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -63,8 +63,11 @@ def escolher_cartas(cartas):
     try:
         while True:
             pos1 = int(input("Escolha a primeira posição: "))
+            if pos1 < 0 or pos1 >= len(cartas):
+                print("Essa opção não existe")
+                continue
             pos2 = int(input("Escolha a segunda posição: "))
-            if pos1 < 0 or pos2 < 0 or pos1 >= len(cartas) or pos2 >= len(cartas):
+            if pos2 < 0 or pos2 >= len(cartas):
                 print("Essa opção não existe")
             elif pos1 == pos2:
                 print("Você não pode escolher a mesma posição duas vezes")
@@ -73,9 +76,10 @@ def escolher_cartas(cartas):
     except ValueError:
         print("Você escolheu algo errado!")
 
-def verificar_par(cartas,reveladas):
-    for i in range(len(cartas)):
-        print(cartas[i])
-        print(reveladas)
+def verificar_par(pos1,pos2,pares,cartas_embaralhadas):
+    for par in pares:
+        if cartas_embaralhadas[pos1] in par.values() and cartas_embaralhadas[pos2] in par.values():
+            return True
+    return False
 
 main()
