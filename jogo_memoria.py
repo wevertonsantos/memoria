@@ -1,8 +1,13 @@
-def conjunto_cartas():
-    cartas = {
-        1:{
-            'palavra':'escola',
-            'palavra_ingles':'school'
-        }
-    }
-    return cartas
+def mostrar_menu():
+    while True:
+        print("Bem-vindo ao jogo da memória")
+        try:
+            escolha = int(input("Qual opção você deseja?\n1. Jogar\n3. Sair"))
+            if escolha == 1:
+                return True
+            elif escolha == 2:
+                return False
+            else:
+                print("Essa opção não existe.")
+        except ValueError:
+            print("Você digitou algo errado.")
