@@ -1,6 +1,11 @@
+
+
 def main():
     if mostrar_menu():
-        print("Jogo")
+        pares = criar_pares()
+        for par in pares:
+            print(pares[par]['palavra'])
+            print(pares[par]['palavra_ingles'])
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -16,5 +21,18 @@ def mostrar_menu():
                 print("Essa opção não existe.")
         except ValueError:
             print("Você digitou algo errado.")
+
+def criar_pares():
+    pares = {
+        'par_1':{
+            "palavra":'escola',
+            "palavra_ingles":'school'
+        },
+        'par_2':{
+            "palavra":'verde',
+            "palavra_ingles":'green'
+        }
+    }
+    return pares
 
 main()
