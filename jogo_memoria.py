@@ -1,11 +1,18 @@
 import random
 
 def main():
+    reveladas = []
+    
     if mostrar_menu():
         pares = criar_pares()
         cartas = montar_cartas(pares)
         cartas_embaralhadas = embaralhar_cartas(cartas)
-        mostrar_tabulheiro(cartas,pares)
+        mostrar_tabulheiro(cartas_embaralhadas,reveladas)
+        pos1,pos2 = escolher_cartas(cartas)
+        reveladas.append(pos1)
+        reveladas.append(pos2)
+        mostrar_tabulheiro(cartas_embaralhadas,reveladas)
+        verificar_par(cartas,reveladas)
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -40,8 +47,29 @@ def embaralhar_cartas(cartas):
     random.shuffle(cartas)
     return cartas
 
-def mostrar_tabulheiro(cartas):
-    ...
+def mostrar_tabulheiro(cartas,reveladas):
+    mostrar_palavras = ""
+    for i in range(len(cartas)):
+        mostrar_palavras = f"?"
+        if i not in reveladas:
+            print(mostrar_palavras)
+        else:
+            mostrar_palavras = f"{cartas[i]}"
+            print(mostrar_palavras)
+
+def escolher_cartas(cartas):
+    try:
+        while True:
+            pos1 = int(input("Escolha a primeira posição: "))
+            pos2 = int(input("Escolha a segunda posição: "))
+            if pos1 and pos2 > len(cartas) - 1 or pos1 and pos2 < 0:
+                print("Essa opção não existe")
+            else:
+                return pos1,pos2
+    except ValueError:
+        print("Você escolheu algo errado!")
+
+def verificar_par(cartas,reveladas):
     ...
 
 main()
