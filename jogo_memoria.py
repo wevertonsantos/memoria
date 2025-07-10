@@ -2,10 +2,12 @@ import random
 
 def main():
     if mostrar_menu():
-            pares = criar_pares()
-            cartas = montar_cartas(pares)
-            embaralhar_cartas(cartas)
-            print(cartas)
+        pares = criar_pares()
+        cartas = montar_cartas(pares)
+        embaralhar_cartas(cartas)
+        mostrar_tabulheiro(cartas)
+        escolha1,escolha2 = receber_escolhas()
+        verificar_par(escolha1,escolha2,cartas)
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -39,7 +41,25 @@ def montar_cartas(pares):
 def embaralhar_cartas(cartas):
     random.shuffle(cartas)
 
-def mostrar_tabulheiro(palavras):
+def receber_escolhas():
+    while True:
+        try:
+            escolha1 = int(input("Qual a primeira carta que você gostaria de virar? "))
+            escolha2 = int(input("Qual a segunda carta que você gostaria de virar? "))
+            return escolha1,escolha2
+        except ValueError:
+            print("Você digitou algo errado.")
+
+def mostrar_tabulheiro(cartas,escolha1,escolha2):
+    for i in range(len(cartas)):
+        print(f"{i} - ?")
+    for i in range(len(cartas)):
+        if i == escolha1:
+            print(f"{i} - {cartas[i]}")
+        if i == escolha2:
+            print(f"{i} - {cartas[i]}")
+
+def verificar_par(escolha1,escolha2,cartas):
     ...
 
 main()
