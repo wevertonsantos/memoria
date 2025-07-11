@@ -9,7 +9,7 @@ def main():
         reveladas = []
 
         while True:
-            tabuleiro = mostrar_tabuleiro(cartas_embaralhadas,reveladas)
+            mostrar_tabuleiro(cartas_embaralhadas,reveladas)
             pos1,pos2 = escolher_cartas(cartas)
             reveladas.append(pos1)
             reveladas.append(pos2)
@@ -19,6 +19,9 @@ def main():
                     print("Parabéns você revelou todas as cartas!")
                     break
             else:
+                print("")
+                mostrar_tabuleiro(cartas_embaralhadas,reveladas)
+                print("")
                 reveladas.remove(pos1)
                 reveladas.remove(pos2)
 
