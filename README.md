@@ -1,6 +1,6 @@
 # 🧠 Jogo da Memória - Versão Texto em Python
 
-Este é um projeto de **Jogo da Memória** feito em Python puro, com o objetivo de praticar **lógica de programação**, **funções bem estruturadas** e raciocínio algorítmico. Ele trabalha com **pares de palavras em português e inglês**! 
+Este é um projeto de **Jogo da Memória** feito em Python, com o objetivo de praticar **lógica de programação**, **funções bem estruturadas** e raciocínio algorítmico. Ele trabalha com **pares de palavras em português e inglês**! 
 
 ## 🎯 Objetivo do jogo
 
@@ -24,10 +24,17 @@ O jogo termina quando todos os pares forem encontrados.
 
 ## 🚀 Como executar
 
-1. Tenha o Python instalado.
-2. Clone este repositório ou copie o arquivo `.py`.
-3. Execute com:
+1. Clone este repositório ou copie o arquivo `.py`.
+```bash
+git clone https://github.com/wevertonsantos/memoria.git
+```
 
+2. Acesse a pasta do projeto:
+```bash
+cd memoria
+```
+
+3. Execute com:
 ```bash
 python jogo_memoria.py
 ```
@@ -41,4 +48,7 @@ Este projeto foi feito com foco em:
 - Estruturação de um jogo por turnos com validação de entradas.
 - Desenvolvimento da lógica com clareza e separação de etapas.
 
-Feito com dedicação para treinar programação! 🚀
+## 📫 Contato
+Se quiser falar comigo sobre o projeto ou oportunidades:
+- 💼 [LinkedIn](https://linkedin.com/in/wevertonsantoss)
+- 📧 wevercanal@gmail.com
