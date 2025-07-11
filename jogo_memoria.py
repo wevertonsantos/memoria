@@ -1,4 +1,4 @@
-import random
+import random,time
 
 def main():
     
@@ -19,9 +19,9 @@ def main():
                     print("Parabéns você revelou todas as cartas!")
                     break
             else:
-                print("")
                 mostrar_tabuleiro(cartas_embaralhadas,reveladas)
                 print("")
+                time.sleep(2)
                 reveladas.remove(pos1)
                 reveladas.remove(pos2)
 
