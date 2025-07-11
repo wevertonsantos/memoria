@@ -1,4 +1,4 @@
-# 🧠 Jogo da Memória - Versão Texto em Python
+# 🧠 Jogo da Memória em Python
 
 Este é um projeto de **Jogo da Memória** feito em Python, com o objetivo de praticar **lógica de programação**, **funções bem estruturadas** e raciocínio algorítmico. Ele trabalha com **pares de palavras em português e inglês**! 
 
