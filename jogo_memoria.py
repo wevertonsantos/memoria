@@ -7,14 +7,20 @@ def main():
         cartas = montar_cartas(pares)
         cartas_embaralhadas = embaralhar_cartas(cartas)
         reveladas = []
-        mostrar_tabulheiro(cartas_embaralhadas,reveladas)
 
-        pos1,pos2 = escolher_cartas(cartas)
-        reveladas.append(pos1)
-        reveladas.append(pos2)
-
-        mostrar_tabulheiro(cartas_embaralhadas,reveladas)
-        verificar_par(pos1,pos2,pares,cartas_embaralhadas)
+        while True:
+            tabuleiro = mostrar_tabuleiro(cartas_embaralhadas,reveladas)
+            pos1,pos2 = escolher_cartas(cartas)
+            reveladas.append(pos1)
+            reveladas.append(pos2)
+            if verificar_par(pos1,pos2,pares,cartas_embaralhadas):
+                if len(reveladas) == len(cartas_embaralhadas):
+                    mostrar_tabuleiro(cartas_embaralhadas,reveladas)
+                    print("Parabéns você revelou todas as cartas!")
+                    break
+            else:
+                reveladas.remove(pos1)
+                reveladas.remove(pos2)
 
 def mostrar_menu():
     print("Bem-vindo ao jogo da memória")
@@ -49,7 +55,7 @@ def embaralhar_cartas(cartas):
     random.shuffle(cartas)
     return cartas
 
-def mostrar_tabulheiro(cartas,reveladas):
+def mostrar_tabuleiro(cartas,reveladas):
     mostrar_palavras = ""
     for i in range(len(cartas)):
         mostrar_palavras = f"?"
